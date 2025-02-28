@@ -199,4 +199,50 @@ button:hover {
     padding: 1rem;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
+}
+
+.download-options {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.download-options h3 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.download-btn {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    background: var(--accent-hover);
+}
+
+.downloads-remaining {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.error-message {
+    color: #ff4444;
+    padding: 1rem;
+    background: rgba(255, 68, 68, 0.1);
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.error-message i {
+    margin-right: 0.5rem;
 } 

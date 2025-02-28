@@ -62,27 +62,28 @@ async function downloadVideo() {
                 'url': url
             })
         });
-
-        // Check remaining requests header
-        const remainingRequests = response.headers.get('X-RateLimit-Remaining');
-        if (remainingRequests && parseInt(remainingRequests) < 20) {
-            console.warn(`Nog maar ${remainingRequests} downloads over deze maand`);
-        }
         
         const data = await response.json();
+        
+        if (!data.formats || data.formats.length === 0) {
+            throw new Error('Geen download formaten beschikbaar');
+        }
+
         resultDiv.innerHTML = `
             <div class="download-options">
                 <h3>Download opties:</h3>
-                <a href="${data.downloadUrl}" class="download-btn" download>
-                    <i class="fas fa-download"></i> Download Video
-                </a>
-                <p class="downloads-remaining">Nog ${100 - ytRequestsThisMonth} downloads over deze maand</p>
+                ${data.formats.map(format => `
+                    <a href="${format.url}" class="download-btn" download target="_blank">
+                        <i class="fas fa-download"></i> Download ${format.qualityLabel || 'Video'}
+                    </a>
+                `).join('')}
+                <p class="downloads-remaining">Nog ${YT_REQUESTS_PER_MONTH - ytRequestsThisMonth} downloads over deze maand</p>
             </div>`;
     } catch (error) {
         resultDiv.innerHTML = `
             <div class="error-message">
                 <i class="fas fa-exclamation-circle"></i>
-                <p>Er is een fout opgetreden bij het downloaden: ${error.message}</p>
+                <p>Er is een fout opgetreden: ${error.message}</p>
             </div>`;
     }
 }
