@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipZop - Netflix Regio Wijzigen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Image/Logo/2.png" alt="ZipZop Logo" height="40">
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="youtube.html">YouTube</a>
+                <a href="netflix-proxy.html" class="active">Netflix Proxy</a>
+                <a href="movies.html">Films</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Netflix Regio Wijzigen</h1>
+                <p class="subtitle">Bekijk Netflix content uit andere landen</p>
+            </div>
+        </section>
+
+        <section class="proxy-section">
+            <div class="region-selector">
+                <h3>Kies een regio</h3>
+                <select id="region-select" class="region-dropdown">
+                    <option value="us">Verenigde Staten</option>
+                    <option value="uk">Verenigd Koninkrijk</option>
+                    <option value="jp">Japan</option>
+                    <option value="kr">Zuid-Korea</option>
+                </select>
+                <button onclick="changeNetflixRegion()" class="cta-button">
+                    <i class="fas fa-globe"></i> Wijzig Regio
+                </button>
+            </div>
+            <div id="proxy-status" class="proxy-status"></div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Zelfde footer als in index.html -->
+    </footer>
+
+    <script src="netflix-proxy.js"></script>
+</body>
+</html> 

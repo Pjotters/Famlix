@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipZop - Download & IP Tools</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Image/Logo/2.png" alt="ZipZop Logo" height="40">
+            </div>
+            <div class="nav-links">
+                <a href="#download">Download Tool</a>
+                <a href="#ip-changer">IP Wijzigen</a>
+                <a href="handleiding.html">Handleiding</a>
+                <a href="privacy.nl.html">Privacy</a>
+                <a href="terms.nl.html">Voorwaarden</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>ZipZop Tools</h1>
+                <p class="subtitle">Download en IP-wijziging tools</p>
+            </div>
+        </section>
+
+        <section id="download" class="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-download"></i>
+                </div>
+                <h3>Video Downloader</h3>
+                <input type="text" id="youtube-url" placeholder="Plak YouTube URL hier" class="download-input">
+                <button onclick="downloadVideo()" class="cta-button">Download</button>
+                <div id="download-result"></div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>IP Wijzigen</h3>
+                <div id="current-ip"></div>
+                <button onclick="changeIP()" class="cta-button">Verander mijn IP</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Image/Logo/2.png" alt="ZipZop Logo" height="30">
+                <p>©ZipZop Tools - Een veilige manier om content te downloaden</p>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Voorwaarden</a>
+                <a href="mailto:contact@zipzop.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

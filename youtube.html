@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipZop - YouTube Downloader</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Image/Logo/2.png" alt="ZipZop Logo" height="40">
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="youtube.html">YouTube</a>
+                <a href="netflix-proxy.html">Netflix Proxy</a>
+                <a href="movies.html">Films</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>YouTube Downloader</h1>
+                <p class="subtitle">Download je favoriete YouTube video's</p>
+            </div>
+        </section>
+
+        <section class="download-section">
+            <div class="download-card">
+                <input type="text" id="youtube-url" placeholder="Plak YouTube URL hier" class="download-input">
+                <button onclick="downloadVideo()" class="cta-button">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <div id="download-result" class="download-result"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Zelfde footer als in index.html -->
+    </footer>
+
+    <script src="youtube.js"></script>
+</body>
+</html> 
