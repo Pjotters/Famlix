@@ -1,0 +1,71 @@
+/* Specifieke stijlen voor movies.html */
+.hero {
+    background: var(--primary-gradient);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+}
+
+.search-section {
+    max-width: 800px;
+    margin: -2rem auto 2rem;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 20px;
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.search-input {
+    flex: 1;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 10%;
+}
+
+.movie-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 375px;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 1.5rem;
+}
+
+.movie-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.movie-year {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+} 

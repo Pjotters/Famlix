@@ -1,0 +1,68 @@
+.verify-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem;
+    background: var(--primary-gradient);
+}
+
+.verify-card {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.verify-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.verify-text {
+    margin: 1.5rem 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.age-verify-form {
+    margin: 2rem 0;
+}
+
+.date-inputs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+}
+
+.date-inputs input {
+    width: 80px;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.verify-result {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.verify-result.error {
+    background: rgba(255, 51, 102, 0.1);
+    color: #ff3366;
+}
+
+.verify-result.success {
+    background: rgba(0, 229, 255, 0.1);
+    color: var(--accent-color);
+} 

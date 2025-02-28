@@ -1,0 +1,61 @@
+.hero {
+    background: var(--primary-gradient);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem 10%;
+    background: var(--dark-bg);
+}
+
+.category-card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+}
+
+.category-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-icon i {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.category-card h3 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.category-card p {
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.category-card .cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+} 

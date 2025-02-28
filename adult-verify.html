@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipZop - Leeftijdsverificatie</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/adult-verify.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Image/Logo/2.png" alt="ZipZop Logo" height="40">
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="youtube.html">YouTube</a>
+                <a href="netflix-proxy.html">Netflix Proxy</a>
+                <a href="movies.html">Films</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="verify-section">
+            <div class="verify-card">
+                <div class="verify-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h1>Leeftijdsverificatie</h1>
+                <p class="verify-text">Je moet 18 jaar of ouder zijn om deze content te bekijken.</p>
+                
+                <div class="age-verify-form">
+                    <div class="date-inputs">
+                        <input type="number" id="day" placeholder="DD" min="1" max="31">
+                        <input type="number" id="month" placeholder="MM" min="1" max="12">
+                        <input type="number" id="year" placeholder="JJJJ" min="1900" max="2024">
+                    </div>
+                    <button onclick="verifyAge()" class="cta-button">
+                        <i class="fas fa-check"></i> Verifiëren
+                    </button>
+                </div>
+                <div id="verify-result" class="verify-result"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Image/Logo/2.png" alt="ZipZop Logo" height="30">
+                <p>©Famlix A product of the ©Pjotters-Company</p>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Voorwaarden</a>
+                <a href="mailto:pjotters.zipzop@gmail.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/adult-verify.js"></script>
+</body>
+</html> 

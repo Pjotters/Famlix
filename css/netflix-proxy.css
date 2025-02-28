@@ -1,0 +1,60 @@
+/* Specifieke stijlen voor netflix-proxy.html */
+.hero {
+    background: var(--primary-gradient);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+}
+
+.proxy-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.region-selector {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.region-dropdown {
+    width: 100%;
+    max-width: 300px;
+    padding: 1.2rem;
+    margin: 1.5rem 0;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+}
+
+.region-dropdown option {
+    background: var(--dark-bg);
+}
+
+.proxy-status {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.ip-status {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.ip-status.success {
+    color: var(--accent-color);
+}
+
+.ip-status.error {
+    color: #ff3366;
+} 

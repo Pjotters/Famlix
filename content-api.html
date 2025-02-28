@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famlix - Content API</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/content-api.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="Image/Logo/2.png" alt="Famlix Logo" height="40">
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="youtube.html">YouTube</a>
+                <a href="netflix-proxy.html">Netflix Proxy</a>
+                <a href="movies.html">Films</a>
+                <a href="fun.html">Fun</a>
+                <a href="content-api.html" class="active">API</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Content API</h1>
+                <p class="subtitle">Beheer je content streams</p>
+            </div>
+        </section>
+
+        <section class="api-section">
+            <div class="api-controls">
+                <div class="api-card">
+                    <h3>Stream Configuratie</h3>
+                    <div class="input-group">
+                        <label for="stream-key">Stream Key</label>
+                        <input type="text" id="stream-key" placeholder="Voer je stream key in">
+                    </div>
+                    <div class="input-group">
+                        <label for="stream-quality">Kwaliteit</label>
+                        <select id="stream-quality">
+                            <option value="1080p">1080p HD</option>
+                            <option value="720p">720p HD</option>
+                            <option value="480p">480p SD</option>
+                        </select>
+                    </div>
+                    <button onclick="startStream()" class="cta-button">
+                        <i class="fas fa-play"></i> Start Stream
+                    </button>
+                </div>
+
+                <div class="api-card">
+                    <h3>Stream Statistieken</h3>
+                    <div id="stream-stats" class="stats-container">
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <span id="viewer-count">0</span>
+                            <label>Kijkers</label>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span id="bandwidth">0 Mbps</span>
+                            <label>Bandbreedte</label>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <span id="uptime">00:00:00</span>
+                            <label>Uptime</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <h3>Stream Preview</h3>
+                <div id="stream-preview" class="preview-container">
+                    <div class="api-data">
+                        <p>API data wordt hier getoond</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Image/Logo/2.png" alt="Famlix Logo" height="30">
+                <p>©Famlix A product of the ©Pjotters-Company</p>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Voorwaarden</a>
+                <a href="mailto:pjotters.zipzop@gmail.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/adult-verify.js"></script>
+    <script src="js/content-api.js"></script>
+</body>
+</html> 
