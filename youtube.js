@@ -17,15 +17,16 @@ async function downloadVideo() {
     resultDiv.innerHTML = loadingSpinner;
 
     try {
-        const response = await fetch('https://youtube-media-downloader.p.rapidapi.com/v2/video/details', {
+        // Aangepaste endpoint URL
+        const response = await fetch('https://youtube-media-downloader.p.rapidapi.com/v2/video/info', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json',
+                'content-type': 'application/x-www-form-urlencoded',
                 'X-RapidAPI-Key': 'fe4fe3d236msh46e7bd6b07ee898p1205b9jsnf93951d84210',
                 'X-RapidAPI-Host': 'youtube-media-downloader.p.rapidapi.com'
             },
-            body: JSON.stringify({
-                url: url
+            body: new URLSearchParams({
+                'url': url
             })
         });
 
@@ -34,22 +35,23 @@ async function downloadVideo() {
         }
         
         const data = await response.json();
+        console.log('API Response:', data); // Debug logging
         
-        if (!data.status || data.status === 'error') {
-            throw new Error(data.message || 'Kan video niet downloaden');
+        if (!data || !data.formats) {
+            throw new Error('Geen download formaten beschikbaar');
         }
 
         resultDiv.innerHTML = `
             <div class="download-options">
                 <h3>Download opties:</h3>
                 <div class="format-list">
-                    ${data.formats ? data.formats.map(format => `
+                    ${data.formats.map(format => `
                         <a href="${format.url}" class="download-btn" download target="_blank">
                             <i class="fas fa-download"></i> 
-                            ${format.qualityLabel || 'Video'} 
-                            (${format.container || 'mp4'})
+                            ${format.quality || 'Standaard'} 
+                            (${format.extension || 'mp4'})
                         </a>
-                    `).join('') : '<p>Geen download formaten beschikbaar</p>'}
+                    `).join('')}
                 </div>
                 <p class="downloads-remaining">Nog ${YT_REQUESTS_PER_MONTH - ytRequestsThisMonth} downloads over deze maand</p>
             </div>`;
@@ -59,7 +61,7 @@ async function downloadVideo() {
             <div class="error-message">
                 <i class="fas fa-exclamation-circle"></i>
                 <p>Er is een fout opgetreden: ${error.message}</p>
-                <small>Probeer een andere video of controleer de URL</small>
+                <small>Controleer of de YouTube URL correct is</small>
             </div>`;
     }
 }
