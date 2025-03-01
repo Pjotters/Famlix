@@ -97,4 +97,53 @@ footer {
 
 .footer-links a:hover {
     opacity: 1;
+}
+
+.feature-card {
+    perspective: 1000px;
+    height: 300px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.feature-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 2rem;
+    border-radius: 15px;
+    background: var(--card-bg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--accent-color);
+    color: white;
+}
+
+.card-back h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.card-back p {
+    font-size: 1.1rem;
+    line-height: 1.6;
 } 
