@@ -7,30 +7,30 @@ if (!checkAge(window.location.href)) {
 const API_CONFIG = {
     BASE_URL: 'https://pornhub-api.p.rapidapi.com/categories_list/en',
     HEADERS: {
-        'x-rapidapi-key': 'fc4fe3d236md46e7bd8027eb8f8g120bb9unf93951d84210',
-        'x-rapidapi-host': 'pornhub-api.p.rapidapi.com'
+        'content-type': 'application/json',
+        'X-RapidAPI-Key': 'fe4fe3d236msh46e7bd6b07ee898p1205b9jsnf93951d84210',
+        'X-RapidAPI-Host': 'pornhub-api.p.rapidapi.com'
     }
 };
 
 async function fetchCategories() {
-    const xhr = new XMLHttpRequest();
-    
-    return new Promise((resolve, reject) => {
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    resolve(JSON.parse(xhr.responseText));
-                } else {
-                    reject(new Error('API request failed'));
-                }
-            }
-        };
+    try {
+        const response = await fetch(API_CONFIG.BASE_URL, {
+            method: 'GET',
+            headers: API_CONFIG.HEADERS
+        });
 
-        xhr.open('GET', API_CONFIG.BASE_URL);
-        xhr.setRequestHeader('x-rapidapi-key', API_CONFIG.HEADERS['x-rapidapi-key']);
-        xhr.setRequestHeader('x-rapidapi-host', API_CONFIG.HEADERS['x-rapidapi-host']);
-        xhr.send();
-    });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('API Response:', data); // Debug logging
+        return data;
+    } catch (error) {
+        console.error('Fetch error:', error);
+        throw new Error(`API request failed: ${error.message}`);
+    }
 }
 
 // Video cards renderen
