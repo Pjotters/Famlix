@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Famlix - Fun Zone</title>
+    <title>Famlix - Fun Gallery</title>
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/fun.css">
+    <link rel="stylesheet" href="css/videos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -19,7 +19,8 @@
                 <a href="youtube.html">YouTube</a>
                 <a href="netflix-proxy.html">Netflix Proxy</a>
                 <a href="movies.html">Films</a>
-                <a href="fun.html" class="active">Fun</a>
+                <a href="fun.html">Fun</a>
+                <a href="videos.html" class="active">Videos</a>
             </div>
         </div>
     </nav>
@@ -27,44 +28,13 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Famlix Fun Zone</h1>
-                <p class="subtitle">Ontdek exclusieve 18+ content</p>
+                <h1>Premium Videos</h1>
+                <p class="subtitle">Ontdek onze exclusieve collectie</p>
             </div>
         </section>
 
-        <section class="content-grid">
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <h3>Dating</h3>
-                <p>Ontmoet nieuwe mensen</p>
-                <a href="#dating" class="cta-button" onclick="return checkAge('fun.html#dating')">
-                    Ontdek meer
-                </a>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-camera"></i>
-                </div>
-                <h3>Webcams</h3>
-                <p>Live entertainment</p>
-                <a href="#webcams" class="cta-button" onclick="return checkAge('fun.html#webcams')">
-                    Bekijk nu
-                </a>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-film"></i>
-                </div>
-                <h3>Videos</h3>
-                <p>Premium content</p>
-                <a href="content-api.html" class="cta-button" onclick="return checkAge('fun.html#videos')">
-                    Ga naar videos
-                </a>
-            </div>
+        <section class="video-grid">
+            <!-- Video cards worden hier dynamisch toegevoegd -->
         </section>
     </main>
 
@@ -83,5 +53,6 @@
     </footer>
 
     <script src="js/adult-verify.js"></script>
+    <script src="js/videos.js"></script>
 </body>
 </html> 
