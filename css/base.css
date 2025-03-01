@@ -1,6 +1,6 @@
 /* Algemene stijlen die op alle paginas worden gebruikt */
 :root {
-    --primary-gradient: linear-gradient(135deg, #8b2f97 0%, #ff3366 100%);
+    --primary-gradient: linear-gradient(135deg, #fb1c24 0%, #4bc9ff 100%);
     --accent-color: #00e5ff;
     --text-color: #ffffff;
     --dark-bg: #1a1a1a;
