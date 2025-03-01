@@ -17,17 +17,21 @@ async function downloadVideo() {
     resultDiv.innerHTML = loadingSpinner;
 
     try {
-        // Aangepaste endpoint URL
-        const response = await fetch('https://youtube-media-downloader.p.rapidapi.com/v2/video/info', {
-            method: 'POST',
+        // Nieuwe API endpoint met searchParams
+        const videoId = extractVideoId(url);
+        if (!videoId) {
+            throw new Error('Ongeldige YouTube URL');
+        }
+
+        const apiUrl = new URL('https://youtube-video-download-info.p.rapidapi.com/dl');
+        apiUrl.searchParams.append('id', videoId);
+
+        const response = await fetch(apiUrl, {
+            method: 'GET',
             headers: {
-                'content-type': 'application/x-www-form-urlencoded',
                 'X-RapidAPI-Key': 'fe4fe3d236msh46e7bd6b07ee898p1205b9jsnf93951d84210',
-                'X-RapidAPI-Host': 'youtube-media-downloader.p.rapidapi.com'
-            },
-            body: new URLSearchParams({
-                'url': url
-            })
+                'X-RapidAPI-Host': 'youtube-video-download-info.p.rapidapi.com'
+            }
         });
 
         if (!response.ok) {
@@ -49,11 +53,10 @@ async function downloadVideo() {
                         <a href="${format.url}" class="download-btn" download target="_blank">
                             <i class="fas fa-download"></i> 
                             ${format.quality || 'Standaard'} 
-                            (${format.extension || 'mp4'})
+                            (${format.ext || 'mp4'})
                         </a>
                     `).join('')}
                 </div>
-                <p class="downloads-remaining">Nog ${YT_REQUESTS_PER_MONTH - ytRequestsThisMonth} downloads over deze maand</p>
             </div>`;
     } catch (error) {
         console.error('Download error:', error);
@@ -66,6 +69,13 @@ async function downloadVideo() {
     }
 }
 
+// Helper functie om video ID uit URL te halen
+function extractVideoId(url) {
+    const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[7].length === 11) ? match[7] : null;
+}
+
 // Reset maandelijkse teller op de eerste dag van elke maand
 function resetMonthlyCounter() {
     const today = new Date();
@@ -75,4 +85,11 @@ function resetMonthlyCounter() {
 }
 
 // Check dagelijks voor reset
-setInterval(resetMonthlyCounter, 24 * 60 * 60 * 1000); 
+setInterval(resetMonthlyCounter, 24 * 60 * 60 * 1000);
+
+// Voeg event listener toe voor enter toets
+document.getElementById('youtube-url')?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        downloadVideo();
+    }
+}); 
